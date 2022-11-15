@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/static/css/style1.css">
+  <link rel="stylesheet" href="/static/css/all.min.css">
+  <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+  <title>Digits Recognition</title>
+  <script>
+    function preview() {
+      frame.src = URL.createObjectURL(event.target.files[0]);
+    }
+  </script>
+</head>
+
+<body class="body">
+  <!--navebar section-->
+  <div class="container">
+    <section class="nave">
+      <nav class="navbar navbar-expand-lg navbar-light bg-transparent shadow-sm">
+        <div class="container-fluid">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active text-center text-primary" href="http://127.0.0.1:8000">HOME</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </section>
+    <section id="home">
+      <div class="container">
+        <div class="row justify-content-between align-items-center pt-5 g-3">
+          <div class="col-md-6 col-sm-2 col-lg-12" style="width:60%;">
+            <form class="form">
+              <div class="mb-3">
+                <h1 class="title">Digit Recognition</h1>
+            </form>
+            <section id="content">
+              <div class="leftside">
+
+                <form action="{{ url_for('upload_image_file') }}" method="POST" enctype="multipart/form-data">
+                  <label>Select a image:</label>
+                  <input id="image" type="file" name="file" accept="image/png, image/jpeg" onchange="preview()"><br><br>
+                  <img id="frame" src="" width="100px" height="100px" alt="Choose an image" />
+                  <div class="buttons_div">
+                    <button type="input" class="btn btn-dark" id="predict_button">Recognize</button>
+                  </div>
+                </form>
+              </div>
+            </section>
+          </div>
+</body>
+
+</html>
