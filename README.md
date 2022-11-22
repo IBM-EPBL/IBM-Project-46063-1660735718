@@ -1,5 +1,6 @@
 # IBM-Project-46063-1660735718
 A Novel Method for Handwritten Digit Recognition System
+
 Category: Artificial Intelligence
 
 Skills Required:
